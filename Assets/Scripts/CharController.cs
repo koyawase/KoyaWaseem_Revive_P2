@@ -6,6 +6,7 @@ public class CharController : MonoBehaviour {
 
     public float moveSpeed;
     public float jumpForce;
+    public float gravityScale;
     public CharacterController controller;
 
     private Vector3 moveDirection;
@@ -17,12 +18,13 @@ public class CharController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        moveDirection = new Vector3(Input.GetAxis("Horizontal"),0f,Input.GetAxis("Vertical"));
+        moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed,0f,Input.GetAxis("Vertical") * moveSpeed);
 
         if (Input.GetButton("Jump"))
         {
             moveDirection.y = jumpForce;
         }
-        controller.Move(moveDirection);
+        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
+        controller.Move(moveDirection * Time.deltaTime);
 	}
 }
