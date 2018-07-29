@@ -466,8 +466,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jumpForce: 20
-  gravityScale: 0.8
+  jumpForce: 5
+  gravityScale: 1
   controller: {fileID: 0}
 --- !u!1 &440001295
 GameObject:

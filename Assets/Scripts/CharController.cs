@@ -18,13 +18,14 @@ public class CharController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed,0f,Input.GetAxis("Vertical") * moveSpeed);
+        moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y,Input.GetAxis("Vertical") * moveSpeed);
 
-        if (Input.GetButton("Jump"))
+        // && controller.isGrounded
+        if (Input.GetButton("Jump") && controller.isGrounded)
         {
             moveDirection.y = jumpForce;
         }
-        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
+        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
 	}
 }
