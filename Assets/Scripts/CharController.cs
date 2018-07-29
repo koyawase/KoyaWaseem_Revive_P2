@@ -20,10 +20,12 @@ public class CharController : MonoBehaviour {
 	void Update () {
         moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y,Input.GetAxis("Vertical") * moveSpeed);
 
-        // && controller.isGrounded
-        if (Input.GetButton("Jump") && controller.isGrounded)
-        {
-            moveDirection.y = jumpForce;
+        if (controller.isGrounded) {
+            moveDirection.y = 0f;
+            if (Input.GetButton("Jump"))
+            {
+                moveDirection.y = jumpForce;
+            }
         }
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
