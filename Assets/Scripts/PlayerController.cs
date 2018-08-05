@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     public float gravityScale;
     public CharacterController controller;
 
-    private Vector3 moveDirection;
+    public Vector3 moveDirection;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour {
                 moveDirection.y = jumpForce;
             }
         }
+
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
 	}
