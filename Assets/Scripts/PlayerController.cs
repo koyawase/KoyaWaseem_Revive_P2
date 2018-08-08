@@ -8,12 +8,16 @@ public class PlayerController : MonoBehaviour {
     public float jumpForce;
     public float gravityScale;
     public CharacterController controller;
+    private float sprintSpeed;
+    private float defaultSpeed;
 
     public Vector3 moveDirection;
 
 	// Use this for initialization
 	void Start () {
-        controller = GetComponent<CharacterController>();	
+        controller = GetComponent<CharacterController>();
+        sprintSpeed = moveSpeed * 1.5f;
+        defaultSpeed = moveSpeed;
 	}
 	
 	// Update is called once per frame
@@ -29,6 +33,14 @@ public class PlayerController : MonoBehaviour {
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpForce;
+            }
+            if (Input.GetButton("LeftShift") && controller.isGrounded)
+            {
+                moveSpeed = sprintSpeed;
+            }
+            else
+            {
+                moveSpeed = defaultSpeed;
             }
         }
 
