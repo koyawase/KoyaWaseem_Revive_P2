@@ -29,4 +29,13 @@ public class FallingJumpPad : MonoBehaviour
         }
 
     }
+
+    private void Update()
+    {
+        if(rigidbody.position.y < -50)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
