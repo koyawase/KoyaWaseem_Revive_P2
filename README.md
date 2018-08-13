@@ -19,7 +19,7 @@ Before the use of NavMeshs, developers would need to manually create and determi
 
 #### Details of Approach
 
-
+NavMesh is an inbuilt Unity tool where AI pathfinding is made easy. It is simple in the fact that mostly everything is set up to work internally and only a few settings need to be tweaked to get it to work with specifc scenarios. 
 
 #### Optional variations
 
