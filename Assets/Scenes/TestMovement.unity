@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 1743699164}
-  moveSpeed: 5
+  moveSpeed: 10
   accel: 2
   turnSpeed: 5
 --- !u!143 &1512008369

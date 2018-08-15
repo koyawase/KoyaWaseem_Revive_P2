@@ -11,7 +11,7 @@ public class Camera : MonoBehaviour {
     float playerHeight = 1;
 
     void Update () {
-        heading += Input.GetAxis("Mouse X") * Time.deltaTime * 180;
+        heading += Input.GetAxis("Mouse X") * Time.deltaTime * 200;
         transform.rotation = Quaternion.Euler(tilt, heading, 0);
 
         transform.position = player.position - transform.forward * cameraDistance + Vector3.up*playerHeight;

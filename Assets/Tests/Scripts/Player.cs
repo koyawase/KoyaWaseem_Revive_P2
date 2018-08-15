@@ -11,8 +11,10 @@ public class Player : MonoBehaviour {
     //INPUT
     public float moveSpeed;
     Vector2 input;
-    public float accel;
+    float accel = 11;
     public float turnSpeed = 5;
+    public float turnSpeedLow = 7;
+    public float turnSpeedHigh = 20;
 
     //CAMERA
     Vector3 camF;
@@ -55,6 +57,8 @@ public class Player : MonoBehaviour {
     {
         intent = (camF * input.y + camR * input.x);
 
+        float ts = velocity.magnitude/5;
+        turnSpeed = Mathf.Lerp(turnSpeedHigh, turnSpeedLow, ts);
         if (input.magnitude > 0)
         {
             Quaternion rot = Quaternion.LookRotation(intent);
