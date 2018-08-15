@@ -5,8 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     //Object references
-    public Transform cameraPivot;
-    float heading = 0;
     public Transform camera;
     CharacterController mover;
 
@@ -37,9 +35,7 @@ public class Player : MonoBehaviour {
 
     void DoInput()
     {
-        heading += Input.GetAxis("Mouse X") * Time.deltaTime * 180;
-        cameraPivot.rotation = Quaternion.Euler(0, heading, 0);
-
+        
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         input = Vector2.ClampMagnitude(input, 1);
     }
