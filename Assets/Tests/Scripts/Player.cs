@@ -4,28 +4,69 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    //Object references
     public Transform cameraPivot;
     float heading = 0;
     public Transform camera;
+    CharacterController mover;
 
+    //INPUT
     public float moveSpeed;
     Vector2 input;
+    public float accel;
+    public float turnSpeed = 5;
 
-	void Update () {
+    //CAMERA
+    Vector3 camF;
+    Vector3 camR;
+
+    //PHYSICS
+    Vector3 intent;
+    Vector3 velocity;
+
+    private void Start()
+    {
+        mover = GetComponent<CharacterController>();
+    }
+
+    void Update () {
+        DoInput();
+        CalculateCamera();
+        DoMove();
+    }
+
+    void DoInput()
+    {
         heading += Input.GetAxis("Mouse X") * Time.deltaTime * 180;
         cameraPivot.rotation = Quaternion.Euler(0, heading, 0);
 
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         input = Vector2.ClampMagnitude(input, 1);
+    }
 
-        Vector3 camF = camera.forward;
-        Vector3 camR = camera.right;
+    void CalculateCamera()
+    {
+        camF = camera.forward;
+        camR = camera.right;
 
         camF.y = 0;
         camR.y = 0;
         camF = camF.normalized;
         camR = camR.normalized;
-        //transform.position += new Vector3(input.x, 0, input.y) * Time.deltaTime * moveSpeed;
-        transform.position += (camF*input.y + camR*input.x) * Time.deltaTime * moveSpeed;
+    }
+
+    void DoMove()
+    {
+        intent = (camF * input.y + camR * input.x);
+
+        if (input.magnitude > 0)
+        {
+            Quaternion rot = Quaternion.LookRotation(intent);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
+        }
+
+        velocity = Vector3.Lerp(velocity, transform.forward * input.magnitude * moveSpeed, accel * Time.deltaTime);
+
+        mover.Move(velocity * Time.deltaTime);
     }
 }
