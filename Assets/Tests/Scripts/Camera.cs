@@ -10,7 +10,7 @@ public class Camera : MonoBehaviour {
     float cameraDistance = 10;
     float playerHeight = 1;
 
-    void Update () {
+    void LateUpdate () {
         heading += Input.GetAxis("Mouse X") * Time.deltaTime * 200;
         transform.rotation = Quaternion.Euler(tilt, heading, 0);
 

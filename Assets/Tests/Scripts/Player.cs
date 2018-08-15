@@ -22,7 +22,11 @@ public class Player : MonoBehaviour {
 
     //PHYSICS
     Vector3 intent;
+    Vector3 velocityXZ;
     Vector3 velocity;
+
+    //GRAVITY
+    float gravity = 10f;
 
     private void Start()
     {
@@ -33,6 +37,10 @@ public class Player : MonoBehaviour {
         DoInput();
         CalculateCamera();
         DoMove();
+        DoGravity();
+
+        mover.Move(velocity * Time.deltaTime);
+
     }
 
     void DoInput()
@@ -65,8 +73,16 @@ public class Player : MonoBehaviour {
             transform.rotation = Quaternion.Lerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
         }
 
-        velocity = Vector3.Lerp(velocity, transform.forward * input.magnitude * moveSpeed, accel * Time.deltaTime);
+        velocityXZ = velocity;
+        velocityXZ.y = 0;
+        velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * moveSpeed, accel * Time.deltaTime);
+        velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
 
-        mover.Move(velocity * Time.deltaTime);
+    }
+
+    void DoGravity()
+    {
+        velocity.y -= gravity * Time.deltaTime;
+        velocity.y = Mathf.Clamp(velocity.y, -2 * moveSpeed, moveSpeed * 2);
     }
 }
