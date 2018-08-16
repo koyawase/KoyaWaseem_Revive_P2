@@ -27,6 +27,7 @@ public class Player : MonoBehaviour {
 
     //GRAVITY
     float gravity = 10f;
+    bool grounded = false;
 
     private void Start()
     {
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour {
     void Update () {
         DoInput();
         CalculateCamera();
+        CalculateGround();
         DoMove();
         DoGravity();
 
@@ -61,6 +63,19 @@ public class Player : MonoBehaviour {
         camR = camR.normalized;
     }
 
+    void CalculateGround()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, -Vector3.up, out hit, 0.2f))
+        {
+            grounded = true;
+        }
+        else
+        {
+            grounded = false;
+        }
+    }
+
     void DoMove()
     {
         intent = (camF * input.y + camR * input.x);
@@ -82,7 +97,14 @@ public class Player : MonoBehaviour {
 
     void DoGravity()
     {
-        velocity.y -= gravity * Time.deltaTime;
-        velocity.y = Mathf.Clamp(velocity.y, -2 * moveSpeed, moveSpeed * 2);
+        if (grounded)
+        {
+            velocity.y = -0.5f;
+        }
+        else
+        {
+            velocity.y -= gravity * Time.deltaTime;
+            velocity.y = Mathf.Clamp(velocity.y, -2 * moveSpeed, moveSpeed * 2);
+        }
     }
 }
