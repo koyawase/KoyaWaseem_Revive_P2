@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 
     //Object references
     public Transform camera;
-    CharacterController mover;
+    public CharacterController mover;
 
     //INPUT
     public float moveSpeed;
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour {
     //PHYSICS
     Vector3 intent;
     Vector3 velocityXZ;
-    Vector3 velocity;
+    public Vector3 velocity;
 
     //GRAVITY
     float gravity = 10f;
