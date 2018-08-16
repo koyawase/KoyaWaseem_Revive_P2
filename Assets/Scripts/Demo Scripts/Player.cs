@@ -39,11 +39,17 @@ public class Player : MonoBehaviour {
         CalculateCamera();
         CalculateGround();
         DoMove();
-        DoGravity();
-        DoJump();
+        //DoGravity();
+        //DoJump();
 
         mover.Move(velocity * Time.deltaTime);
-
+        //Gravity and jump implementent after movement to allow for use of jump pad.
+        //If gravity is applied before using jump pad, it will not work properly.
+        DoGravity();
+        DoJump();
+        //need to be able to move after calculating jump and gravity.
+        //NOTE: since move is being called twice is same method, player move 2x faster. Fix by halving movespeed variable. 
+        mover.Move(velocity * Time.deltaTime);
     }
 
     void DoInput()
