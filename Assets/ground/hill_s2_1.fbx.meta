@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 11a4cfdd59c7745498c1c31e561adc3a
+guid: 28516953a8da07c4983e238d6af23e39
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -9,6 +9,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCube23
+    4300002: pCube24
   externalObjects: {}
   materials:
     importMaterials: 1
