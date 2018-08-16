@@ -10,6 +10,11 @@ public class Camera : MonoBehaviour {
     float cameraDistance = 10;
     float playerHeight = 1;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void LateUpdate () {
         heading += Input.GetAxis("Mouse X") * Time.deltaTime * 200;
 
