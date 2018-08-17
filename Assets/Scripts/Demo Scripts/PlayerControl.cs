@@ -122,6 +122,7 @@ public class PlayerControl : MonoBehaviour {
         {
             if (Input.GetButtonDown("Jump"))
             {
+                //this.transform.parent = null;
                 velocity.y = jumpHeight;
             }
         }

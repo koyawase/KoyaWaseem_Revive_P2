@@ -1143,7 +1143,7 @@ MonoBehaviour:
   turnSpeed: 5
   turnSpeedLow: 7
   turnSpeedHigh: 20
-  jumpHeight: 5
+  jumpHeight: 8
   velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &1512008369
 CharacterController:
