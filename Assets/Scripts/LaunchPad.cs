@@ -17,10 +17,9 @@ public class LaunchPad : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-
-            player.velocity.y = 0;
-            //player.velocity.y += power;
-            player.velocity = player.velocity + (transform.up * power);
+            player.velocityY = 0;
+            player.velocityY += power;
+            //player.velocity = player.velocity + (transform.up * power);
         }
 
     }
