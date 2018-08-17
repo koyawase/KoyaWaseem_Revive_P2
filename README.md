@@ -6,7 +6,7 @@ Demonstration Video: https://www.youtube.com/watch?v=qUKFnCMWaek
 
 Contents of the demonstration video are found inside of the SampleScene.
 
-Scripts Used (found inside Assets/Scripts):
+Scripts Used (found inside Assets/Scripts/Old Scripts):
 * CameraController.cs
 * EnemyController.cs
 * NPCPatrolPath.cs
