@@ -8,13 +8,13 @@ public class AIController : MonoBehaviour
 
     public float lookRadius = 10f;
 
-    Player player;
+    PlayerControl player;
     Transform target;
     NavMeshAgent agent;
 
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = GameObject.Find("Player").GetComponent<PlayerControl>();
         target = player.transform;
         agent = GetComponent<NavMeshAgent>();
     }

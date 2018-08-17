@@ -5,12 +5,12 @@ using UnityEngine;
 public class LaunchPad : MonoBehaviour
 {
 
-    Player player;
+    PlayerControl player;
     public float power;
 
     private void Awake()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = GameObject.Find("Player").GetComponent<PlayerControl>();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class PlayerControl : MonoBehaviour {
 
     //Object references
     public Transform camera;
@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
     public float turnSpeed = 5;
     public float turnSpeedLow = 7;
     public float turnSpeedHigh = 20;
+    public float jumpHeight;
 
     //CAMERA
     Vector3 camF;
@@ -121,7 +122,7 @@ public class Player : MonoBehaviour {
         {
             if (Input.GetButtonDown("Jump"))
             {
-                velocity.y = moveSpeed;
+                velocity.y = jumpHeight;
             }
         }
     }
