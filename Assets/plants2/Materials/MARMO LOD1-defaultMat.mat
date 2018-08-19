@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: StoneTiles_Material
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: MARMO LOD1-defaultMat
+  m_Shader: {fileID: 2, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,15 +19,13 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: ccdef16ce4ffc0a40ac72599d947841a, type: 3}
+        m_Texture: {fileID: 2800000, guid: deb709e32f9f03642a1cbe0c9074e881, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 03e334e43cd315f4aba8b5e554cc42a3, type: 3}
+        m_Texture: {fileID: 2800000, guid: c0fb5aa5ef5564e4d9e8889142e0c532, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Shininess: 1
+    m_Floats: []
     m_Colors:
-    - _Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
-    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
