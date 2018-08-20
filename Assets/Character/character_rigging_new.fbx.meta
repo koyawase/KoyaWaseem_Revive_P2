@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: f819f01ddb1263e418044ad79ae1fc4c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: character
+    100002: //RootNode
+    100004: head
+    100006: hipControl
+    100008: hipJ
+    100010: ikLarm
+    100012: ikLleg
+    100014: ikRarm
+    100016: ikRleg
+    100018: ikSpine
+    100020: LankleJ
+    100022: LclavicleJ
+    100024: LelbowJ
+    100026: LfingerJ
+    100028: LhandControl
+    100030: LkneeJ
+    100032: LlegControl
+    100034: LlegTopJ
+    100036: LshoulderJ
+    100038: LtoeJ
+    100040: LwristJ
+    100042: neck
+    100044: nurbsCircle1
+    100046: RankleJ
+    100048: RclavicleJ
+    100050: RelbowJ
+    100052: RfingerJ
+    100054: RhandControl
+    100056: rig
+    100058: RkneeJ
+    100060: RlegControl
+    100062: RlegTopJ
+    100064: RshoulderJ
+    100066: RtoeJ
+    100068: RwristJ
+    100070: Spine1
+    100072: Spine1 1
+    100074: Spine3
+    100076: spineCurve
+    100078: top
+    400000: character
+    400002: //RootNode
+    400004: head
+    400006: hipControl
+    400008: hipJ
+    400010: ikLarm
+    400012: ikLleg
+    400014: ikRarm
+    400016: ikRleg
+    400018: ikSpine
+    400020: LankleJ
+    400022: LclavicleJ
+    400024: LelbowJ
+    400026: LfingerJ
+    400028: LhandControl
+    400030: LkneeJ
+    400032: LlegControl
+    400034: LlegTopJ
+    400036: LshoulderJ
+    400038: LtoeJ
+    400040: LwristJ
+    400042: neck
+    400044: nurbsCircle1
+    400046: RankleJ
+    400048: RclavicleJ
+    400050: RelbowJ
+    400052: RfingerJ
+    400054: RhandControl
+    400056: rig
+    400058: RkneeJ
+    400060: RlegControl
+    400062: RlegTopJ
+    400064: RshoulderJ
+    400066: RtoeJ
+    400068: RwristJ
+    400070: Spine1
+    400072: Spine1 1
+    400074: Spine3
+    400076: spineCurve
+    400078: top
+    2100000: aiStandard1
+    4300000: character
+    9500000: //RootNode
+    13700000: character
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
