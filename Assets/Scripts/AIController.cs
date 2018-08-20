@@ -6,6 +6,9 @@ using UnityEngine.AI;
 public class AIController : MonoBehaviour
 {
 
+    [SerializeField]
+    private Transform respawnPoint;
+
     public float lookRadius = 10f;
 
     PlayerControl player;
@@ -23,15 +26,16 @@ public class AIController : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(target.position, transform.position);
-
+        Debug.Log(distance);
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
 
-            if (distance <= agent.stoppingDistance)
+            //Hard coded 3 because that's the distance it is when it's close enough to the player
+            if (distance <= 2.5)
             {
                 //Attack the target
-
+                player.transform.position = respawnPoint.transform.position;
                 //Face the target
                 FaceTarget();
             }
