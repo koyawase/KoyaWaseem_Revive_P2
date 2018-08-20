@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5be3dbcaa2d3fe144935343df50751ba
+guid: fc16ca5b917c8534b865d6bd099312a8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -85,7 +85,7 @@ ModelImporter:
     400078: top
     2100000: aiStandard1
     4300000: character
-    7400000: Idle
+    7400000: jump
     9500000: //RootNode
     13700000: character
   externalObjects: {}
@@ -117,17 +117,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: jump
       takeName: Take 001
-      firstFrame: 1
-      lastFrame: 72
+      firstFrame: 80
+      lastFrame: 152
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
