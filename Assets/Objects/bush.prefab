@@ -61,15 +61,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpSpecMap:
-        m_Texture: {fileID: 2800000, guid: 211206edaa38d904998a963b5462eead, type: 3}
+        m_Texture: {fileID: 2800000, guid: bb5a05b20f44ef54bb217564b860949a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: fd66879ec754e0a4590538b06b3a3ecf, type: 3}
+        m_Texture: {fileID: 2800000, guid: aa047c24e394e51408ef79eadfb04b23, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TranslucencyMap:
-        m_Texture: {fileID: 2800000, guid: 89ed1dab8c2c1de4e8b62ba8fd846255, type: 3}
+        m_Texture: {fileID: 2800000, guid: 32c9188483559044e9868a0dbbdb881b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -99,19 +99,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpSpecMap:
-        m_Texture: {fileID: 2800000, guid: 211206edaa38d904998a963b5462eead, type: 3}
+        m_Texture: {fileID: 2800000, guid: bb5a05b20f44ef54bb217564b860949a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: fd66879ec754e0a4590538b06b3a3ecf, type: 3}
+        m_Texture: {fileID: 2800000, guid: aa047c24e394e51408ef79eadfb04b23, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadowTex:
-        m_Texture: {fileID: 2800000, guid: a2b38541f64e62d4f92749ae55381b26, type: 3}
+        m_Texture: {fileID: 2800000, guid: e21d8dec500e6ed4cb233d20a6fbd27e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TranslucencyMap:
-        m_Texture: {fileID: 2800000, guid: 89ed1dab8c2c1de4e8b62ba8fd846255, type: 3}
+        m_Texture: {fileID: 2800000, guid: 32c9188483559044e9868a0dbbdb881b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -122,7 +122,7 @@ Material:
     - _TranslucencyViewDependency: 0.7
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _TranslucencyColor: {r: 0.4922515, g: 0.6603774, b: 0.052954797, a: 1}
+    - _TranslucencyColor: {r: 0, g: 0, b: 0, a: 1}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
 --- !u!23 &23189919629855150
