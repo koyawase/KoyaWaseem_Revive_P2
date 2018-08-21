@@ -23,15 +23,21 @@ public class PlayerControl : MonoBehaviour
     Transform camera;
     CharacterController controller;
 
+    //Animator
+    Animator anim;
+
     void Start()
     {
         camera = Camera.main.transform;
         controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
 
 
     void Update()
     {
+        CheckAnimation();
+
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector2 inputDir = input.normalized;
 
@@ -67,6 +73,18 @@ public class PlayerControl : MonoBehaviour
         if (controller.isGrounded)
         {
             velocityY = jumpHeight;
+        }
+    }
+
+    void CheckAnimation(){
+        if(Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")){
+            anim.SetTrigger("run");
+        }
+        if(Input.GetButtonDown("Jump") && controller.isGrounded){
+            anim.SetTrigger("jump");
+        }
+        else{
+            anim.SetTrigger("idle");
         }
     }
 }
