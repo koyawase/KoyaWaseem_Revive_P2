@@ -25,6 +25,8 @@ public class PlayerControl : MonoBehaviour
 
     //Animator
     Animator anim;
+    bool jump = false;
+    bool running = false;
 
     void Start()
     {
@@ -79,12 +81,29 @@ public class PlayerControl : MonoBehaviour
     void CheckAnimation(){
         if(Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")){
             anim.SetTrigger("run");
+            running = true;
+            jump = false;
         }
-        if(Input.GetButtonDown("Jump") && controller.isGrounded){
+        if(Input.GetButtonDown("Jump")){
             anim.SetTrigger("jump");
+            jump = true;
         }
-        else{
+        else if(Input.GetButtonUp("Horizontal") || Input.GetButtonUp("Vertical")){
             anim.SetTrigger("idle");
+            running = false;
+            jump = false;
         }
-    }
+        if(jump == true && running == false ){
+            anim.SetTrigger("idle");
+            jump = false;
+            running = false;
+        }
+        else if(jump == true && running == true){
+            anim.SetTrigger("run");
+            jump = false;
+        }
+;
+        }
+
+
 }
