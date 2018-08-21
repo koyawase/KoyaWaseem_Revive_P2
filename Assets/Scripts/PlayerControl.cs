@@ -23,15 +23,23 @@ public class PlayerControl : MonoBehaviour
     Transform camera;
     CharacterController controller;
 
+    //Animator
+    Animator anim;
+    bool jump = false;
+    bool running = false;
+
     void Start()
     {
         camera = Camera.main.transform;
         controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
 
 
     void Update()
     {
+        CheckAnimation();
+
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector2 inputDir = input.normalized;
 
@@ -69,4 +77,33 @@ public class PlayerControl : MonoBehaviour
             velocityY = jumpHeight;
         }
     }
+
+    void CheckAnimation(){
+        if(Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")){
+            anim.SetTrigger("run");
+            running = true;
+            jump = false;
+        }
+        if(Input.GetButtonDown("Jump")){
+            anim.SetTrigger("jump");
+            jump = true;
+        }
+        else if(Input.GetButtonUp("Horizontal") || Input.GetButtonUp("Vertical")){
+            anim.SetTrigger("idle");
+            running = false;
+            jump = false;
+        }
+        if(jump == true && running == false ){
+            anim.SetTrigger("idle");
+            jump = false;
+            running = false;
+        }
+        else if(jump == true && running == true){
+            anim.SetTrigger("run");
+            jump = false;
+        }
+;
+        }
+
+
 }
