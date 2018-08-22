@@ -88,21 +88,17 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetButtonDown("Horizontal"))
         {
             movingHorizontal = true;
-            Debug.Log("Horizontal True");
         }
         if (Input.GetButtonDown("Vertical"))
         {
-            Debug.Log("Vertical True");
             movingVertical = true;
         }
         if (Input.GetButtonUp("Horizontal"))
         {
-            Debug.Log("Horizontal False");
             movingHorizontal = false;
         }
         if (Input.GetButtonUp("Vertical"))
         {
-            Debug.Log("Vertical False");
             movingVertical = false;
         }
     
