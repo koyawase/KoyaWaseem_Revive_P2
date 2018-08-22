@@ -30,11 +30,16 @@ public class PlayerControl : MonoBehaviour
     bool movingHorizontal = false;
     bool movingVertical = false;
 
+    //Scale
+    Vector3 startingScale;
+    bool isStartingScale = true;
+
     void Start()
     {
         camera = Camera.main.transform;
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        startingScale = transform.localScale;
     }
 
 
@@ -45,15 +50,9 @@ public class PlayerControl : MonoBehaviour
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector2 inputDir = input.normalized;
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
+        CheckJump();
 
-        if (Input.GetKeyDown("c"))
-        {
-            transform.localScale = new Vector3(5f, 5f, 5f);
-        }
+        CheckScale();
 
         //Rotating the character
         if (inputDir != Vector2.zero)
@@ -77,14 +76,30 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void Jump()
+    void CheckJump()
     {
-        if (controller.isGrounded)
+        if (controller.isGrounded && Input.GetButtonDown("Jump"))
         {
             velocityY = jumpHeight;
         }
     }
 
+    void CheckScale()
+    {
+        if (Input.GetKeyDown("c"))
+        {
+            if (isStartingScale)
+            {
+                transform.localScale = new Vector3(5f, 5f, 5f);
+                isStartingScale = false;
+            }
+            else if (!isStartingScale)
+            {
+                transform.localScale = startingScale;
+                isStartingScale = true;
+            }
+        }
+    }
 
     //This method makes sense logically but is broken in game.
     void CheckAnimation()
