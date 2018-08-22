@@ -50,6 +50,11 @@ public class PlayerControl : MonoBehaviour
             Jump();
         }
 
+        if (Input.GetKeyDown("c"))
+        {
+            transform.localScale = new Vector3(5f, 5f, 5f);
+        }
+
         //Rotating the character
         if (inputDir != Vector2.zero)
         {
