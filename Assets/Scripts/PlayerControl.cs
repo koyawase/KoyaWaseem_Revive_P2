@@ -7,7 +7,6 @@ public class PlayerControl : MonoBehaviour
 
     //Movement
     Vector2 input;
-    Vector2 inputDir;
     public float walkSpeed = 7;
     public float runSpeed = 14;
     public float gravity = 15f;
@@ -48,47 +47,33 @@ public class PlayerControl : MonoBehaviour
     {
         CheckAnimation();
 
-        CheckInputs();
+        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 inputDir = input.normalized;
 
         CheckJump();
 
         CheckScale();
 
-        CheckRotation();
+        //Rotating the character
+        if (inputDir != Vector2.zero)
+        {
+            float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + camera.eulerAngles.y;
+            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
 
-        CheckSprint();
+        }
 
-        ApplyGravity();
+        bool running = Input.GetKey(KeyCode.LeftShift);
+        float speed = ((running) ? runSpeed : walkSpeed) * inputDir.magnitude;
 
+        velocityY += Time.deltaTime * -gravity;
+
+        velocity = transform.forward * speed + Vector3.up * velocityY;
         controller.Move(velocity * Time.deltaTime);
 
-        ResetGravity();
-    }
-
-    void ResetGravity()
-    {
         if (controller.isGrounded)
         {
             velocityY = 0;
         }
-    }
-
-    void ApplyGravity()
-    {
-        velocityY += Time.deltaTime * -gravity;
-    }
-
-    void CheckSprint()
-    {
-        bool running = Input.GetKey(KeyCode.LeftShift);
-        float speed = ((running) ? runSpeed : walkSpeed) * inputDir.magnitude;
-        velocity = transform.forward * speed + Vector3.up * velocityY;
-    }
-
-    void CheckInputs()
-    {
-        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        inputDir = input.normalized;
     }
 
     void CheckJump()
@@ -116,16 +101,6 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void CheckRotation()
-    {
-        if (inputDir != Vector2.zero)
-        {
-            float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + camera.eulerAngles.y;
-            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
-
-        }
-    }
-
     //This method makes sense logically but is broken in game.
     void CheckAnimation()
     {
@@ -146,7 +121,7 @@ public class PlayerControl : MonoBehaviour
         {
             movingVertical = false;
         }
-    
+
         //Setting the animation based on the input
         if (Input.GetButtonDown("Jump") && controller.isGrounded)
         {
@@ -157,10 +132,10 @@ public class PlayerControl : MonoBehaviour
             anim.SetTrigger("run");
         }
         else if (movingHorizontal == false && movingVertical == false)
-       {
+        {
             anim.SetTrigger("idle");
         }
-    
+
     }
 
 }
