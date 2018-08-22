@@ -80,72 +80,46 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void CheckAnimation(){
-        if(Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")){
-            anim.SetTrigger("run");
-            running = true;
-            jump = false;
-        }
-        if(Input.GetButtonDown("Jump")){
-            anim.SetTrigger("jump");
-            jump = true;
-        }
-        else if(Input.GetButtonUp("Horizontal") || Input.GetButtonUp("Vertical")){
-            anim.SetTrigger("idle");
-            running = false;
-            jump = false;
-        }
-        if(jump == true && running == false ){
-            anim.SetTrigger("idle");
-            jump = false;
-            running = false;
-        }
-        else if(jump == true && running == true){
-            anim.SetTrigger("run");
-            jump = false;
-        }
-
-    }
 
     //This method makes sense logically but is broken in game.
-    //void CheckAnimation()
-    //{
-    //    //Checking inputs to determine animations
-    //    if (Input.GetButtonDown("Horizontal"))
-    //    {
-    //        movingHorizontal = true;
-    //        Debug.Log("Horizontal True");
-    //    }
-    //    if (Input.GetButtonDown("Vertical"))
-    //    {
-    //        Debug.Log("Vertical True");
-    //        movingVertical = true;
-    //    }
-    //    if (Input.GetButtonUp("Horizontal"))
-    //    {
-    //        Debug.Log("Horizontal False");
-    //        movingHorizontal = false;
-    //    }
-    //    if (Input.GetButtonUp("Vertical"))
-    //    {
-    //        Debug.Log("Vertical False");
-    //        movingVertical = false;
-    //    }
-    //
-    //    //Setting the animation based on the input
-    //    if (Input.GetButtonDown("Jump") && controller.isGrounded)
-    //    {
-    //        anim.SetTrigger("jump");
-    //    }
-    //    if (movingHorizontal == true || movingVertical == true)
-    //    {
-    //        anim.SetTrigger("run");
-    //    }
-    //    else if (movingHorizontal == false && movingVertical == false)
-    //   {
-    //        anim.SetTrigger("idle");
-    //    }
-    //
-    //}
+    void CheckAnimation()
+    {
+        //Checking inputs to determine animations
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            movingHorizontal = true;
+            Debug.Log("Horizontal True");
+        }
+        if (Input.GetButtonDown("Vertical"))
+        {
+            Debug.Log("Vertical True");
+            movingVertical = true;
+        }
+        if (Input.GetButtonUp("Horizontal"))
+        {
+            Debug.Log("Horizontal False");
+            movingHorizontal = false;
+        }
+        if (Input.GetButtonUp("Vertical"))
+        {
+            Debug.Log("Vertical False");
+            movingVertical = false;
+        }
+    
+        //Setting the animation based on the input
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        {
+            anim.SetTrigger("jump");
+        }
+        if (movingHorizontal == true || movingVertical == true)
+        {
+            anim.SetTrigger("run");
+        }
+        else if (movingHorizontal == false && movingVertical == false)
+       {
+            anim.SetTrigger("idle");
+        }
+    
+    }
 
 }
