@@ -33,12 +33,18 @@ public class AIController : MonoBehaviour
             //Hard coded 3 because that's the distance it is when it's close enough to the player
             if (distance <= 2.5)
             {
-                //Attack the target
-                player.transform.position = respawnPoint.transform.position;
                 //Face the target
                 FaceTarget();
+
+                //Attack the target
+                Attack();
             }
         }
+    }
+
+    void Attack()
+    {
+        player.transform.position = respawnPoint.transform.position;
     }
 
     void FaceTarget()
@@ -48,6 +54,7 @@ public class AIController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
+    //Drawing radius that enemy can follow player
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

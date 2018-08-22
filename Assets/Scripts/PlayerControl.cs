@@ -42,7 +42,6 @@ public class PlayerControl : MonoBehaviour
         startingScale = transform.localScale;
     }
 
-
     void Update()
     {
         CheckAnimation();
@@ -84,23 +83,6 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void CheckScale()
-    {
-        if (Input.GetKeyDown("c"))
-        {
-            if (isStartingScale)
-            {
-                transform.localScale = new Vector3(5f, 5f, 5f);
-                isStartingScale = false;
-            }
-            else if (!isStartingScale)
-            {
-                transform.localScale = startingScale;
-                isStartingScale = true;
-            }
-        }
-    }
-
     //This method makes sense logically but is broken in game.
     void CheckAnimation()
     {
@@ -138,4 +120,54 @@ public class PlayerControl : MonoBehaviour
 
     }
 
+    //Changes the scale based off input
+    //Player may only be able to access certain areas or do certain things when a certain scale
+    void CheckScale()
+    {
+        if (Input.GetKeyDown("c"))
+        {
+            if (isStartingScale)
+            {
+                transform.localScale = new Vector3(5f, 5f, 5f);
+                isStartingScale = false;
+            }
+            else if (!isStartingScale)
+            {
+                transform.localScale = startingScale;
+                isStartingScale = true;
+            }
+        }
+    }
+
+    //Player can change colour.
+    //Can access certain areas of not be attacked by certain enemies when certain colour
+    void CheckColour()
+    {
+
+    }
+
+    //Player is able to attack the enemy
+    void Attack()
+    {
+
+    }
+
+    //Player is able to double jump
+    void DoubleJump()
+    {
+
+    }
+
+    //Player is able to wall jump
+    void WallJump()
+    {
+
+    }
+
+    //Player has health and lives. Loses life when dies
+    //And loses health when attacked or in fog/smoke etc.
+    void CalculateHealth()
+    {
+
+    }
 }
