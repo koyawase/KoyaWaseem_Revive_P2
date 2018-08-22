@@ -27,6 +27,8 @@ public class PlayerControl : MonoBehaviour
     Animator anim;
     bool jump = false;
     bool running = false;
+    bool movingHorizontal = false;
+    bool movingVertical = false;
 
     void Start()
     {
@@ -102,8 +104,48 @@ public class PlayerControl : MonoBehaviour
             anim.SetTrigger("run");
             jump = false;
         }
-;
-        }
 
+    }
+
+    //This method makes sense logically but is broken in game.
+    //void CheckAnimation()
+    //{
+    //    //Checking inputs to determine animations
+    //    if (Input.GetButtonDown("Horizontal"))
+    //    {
+    //        movingHorizontal = true;
+    //        Debug.Log("Horizontal True");
+    //    }
+    //    if (Input.GetButtonDown("Vertical"))
+    //    {
+    //        Debug.Log("Vertical True");
+    //        movingVertical = true;
+    //    }
+    //    if (Input.GetButtonUp("Horizontal"))
+    //    {
+    //        Debug.Log("Horizontal False");
+    //        movingHorizontal = false;
+    //    }
+    //    if (Input.GetButtonUp("Vertical"))
+    //    {
+    //        Debug.Log("Vertical False");
+    //        movingVertical = false;
+    //    }
+    //
+    //    //Setting the animation based on the input
+    //    if (Input.GetButtonDown("Jump") && controller.isGrounded)
+    //    {
+    //        anim.SetTrigger("jump");
+    //    }
+    //    if (movingHorizontal == true || movingVertical == true)
+    //    {
+    //        anim.SetTrigger("run");
+    //    }
+    //    else if (movingHorizontal == false && movingVertical == false)
+    //   {
+    //        anim.SetTrigger("idle");
+    //    }
+    //
+    //}
 
 }
