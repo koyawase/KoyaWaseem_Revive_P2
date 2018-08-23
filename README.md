@@ -2,11 +2,17 @@
 
 ### Setup
 
-To export the game into Unity3D, simply clone the repository, open Unity3D and open the cloned repository.
+* To export the game into Unity3D, simply clone the repository, open Unity3D and open the cloned repository.
+* To play the game on Windows, extract the Demo.zip file and run the unity exe file.
+* To play on Mac extract the GameDemoExecutable.zip in the blackboard submission and run the Mac app.
 
-To play the game on Windows, extract the Demo.zip file and run the unity exe file.
+### Achitecture
 
-To play on Mac extract the GameDemoExecutable.zip in the blackboard submission and run the Mac app.
+The game is a basic 3D platformer. The idea is to get from the the start to the goal while navigating through different obstacles. These obstacles include moving platforms, jump pads, hiding from AI and triggering scripted events. 
+
+The most difficult part of the game was creating game mechanics that was both fun and not extremely tedious to play. For 3D platformers, you do not want to be unforgiving if players make a small mistake. This makes the game too hard and too frustrating to play. But on the other end, if it is too easy, it is simply a boring game. It is hard to get the right balance. 
+
+I tried to create the game mechanics so that it got a balance so that it is fun and not too easy. 
 
 ## COMP313 ASSIGNMENT 1 - WASEEM KOYA
 
