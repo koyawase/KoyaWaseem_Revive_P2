@@ -1,3 +1,13 @@
+## COMP313 ASSIGNMENT 2 - WASEEM KOYA
+
+### Setup
+
+To export the game into Unity3D, simply clone the repository, open Unity3D and open the cloned repository.
+
+To play the game on Windows, extract the Demo.zip file and run the unity exe file.
+
+To play on Mac extract the GameDemoExecutable.zip in the blackboard submission and run the Mac app.
+
 ## COMP313 ASSIGNMENT 1 - WASEEM KOYA
 
 ### NavMesh and NavMeshAgents
